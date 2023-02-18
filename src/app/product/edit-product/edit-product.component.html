@@ -1,0 +1,22 @@
+<div class="container text-center mt-5 mb-2">
+    <b class="fs-2 p-5">Update Product</b>
+    <div class="container w-50 text-center mt-2 mb-5" style="background-color:rgba(209, 155, 128, 0.416)">
+        
+        <form (ngSubmit)="updateProduct(updateproductform)" #updateproductform="ngForm" class="form-control">
+    <input type="text" [(ngModel)]="pdata.id" formControlName="id" class="form-control mt-2 p-2" id="pid" name="pi" placeholder="Product Id">
+    <input type="text" [(ngModel)]="pdata.pname" formControlName="productBrand" class="form-control mt-2 p-2" id="pbr" name="pb" placeholder="Product Brand">
+    <input type="text" [(ngModel)]="pdata.categoryId" formControlName="categoryId" class="form-control mt-2 p-2" id="cid" name="ci" placeholder="Category ID">
+    <input type="text" [(ngModel)]="pdata.categoryName" formControlName="categoryName" class="form-control mt-2 p-2" id="cname" name="cn" placeholder="Category Name">
+    <input type="text" [(ngModel)]="pdata.productName" formControlName="productName" class="form-control mt-2 p-2" id="pname" name="pn" placeholder="Product Name">
+    <input type="text" [(ngModel)]="pdata.mrpPrice" formControlName="mrpPrice" class="form-control mt-2 p-2" id="mrp" name="p1" placeholder="MRP Price">
+    <input type="text" [(ngModel)]="pdata.price" formControlName="price" class="form-control mt-2 p-2" id="p" name="pr" placeholder="Price">
+    <input type="text" [(ngModel)]="pdata.isAvailable" formControlName="isAvailable" class="form-control mt-2 p-2" id="pavail" name="pa" placeholder="Availablity">
+    <input type="text" [(ngModel)]="pdata.productImage" formControlName="productImage" class="form-control mt-2 p-2" id="pimg" name="img" placeholder="Product Image">
+    <input type="text" [(ngModel)]="pdata.rating" formControlName="rating" class="form-control mt-2 p-2" id="prat" name="rat" placeholder="Product Rating">
+    <input type="text" [(ngModel)]="pdata.reviews" formControlName="reviews" class="form-control mt-2 p-2" id="prev" name="rev" placeholder="Product Review">
+    <input type="text" [(ngModel)]="pdata.discount" formControlName="discount" class="form-control mt-2 p-2" id="dis" name="di" placeholder="Discount">
+    <!-- <input type="text" class="form-control mt-2 p-2" placeholder="Product Id"> -->
+    <button class="btn btn-outline-light p-2 m-3" style="background-color: rgba(132, 13, 13, 0.834);">Update Product</button>
+        </form>
+    </div>
+</div>

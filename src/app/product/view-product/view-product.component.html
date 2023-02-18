@@ -1,0 +1,31 @@
+<!-- Product section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{prodata.productImage}}" alt="..." /></div>
+            <div class="col-md-6">
+                <div class="small mb-1">{{prodata.productBrand}}</div>
+                <h1 class="display-5 fw-bolder">{{prodata.productName}}</h1>
+                <div class="fs-5 mb-5 px-2">
+                    <span class="text-muted text-decoration-line-through fs-5 p-2">MRP ₹ {{prodata.mrpPrice}} </span>
+                    <span class="fs-2 font-monospace fw-bold">₹{{prodata.price}}</span>
+                    <b class="p-3">({{prodata.discount}} )</b><br>
+                    <span class="px-2 text-warning">{{prodata.rating}} Stars</span>
+                    <span class="px-2 fs-6">({{prodata.reviews}} Ratings)</span>
+
+                </div>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                <div class="d-flex">
+                    
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                    </button>
+                    <button class="btn ms-2 edit" type="button"><a href="product/edit-product/{{prodata.id}}">Edit </a></button>
+                    <button class="btn ms-2 delete" type="button"><a href="product/delete-product/{{prodata.id}}">Delete</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

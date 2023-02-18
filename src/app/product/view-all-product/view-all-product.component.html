@@ -1,0 +1,60 @@
+<!-- Category Bar -->
+<div class="container text-center">
+    
+        <div class="row mt-3">
+            <div class="col-3 p-1 mt-2">
+                <a (click)="filter('')">
+                    <img class="w-50 rounded-circle" src="https://i.postimg.cc/RFm66dnX/https-cloud-taggbox-com-media-2022-06-178615-image-295477578-1674020177.webp" alt="">
+                    <h5 class="p-3 m-2 text-success">All Products</h5>
+                </a>
+            </div>
+            <div class="col-3 p-2"> 
+                <a (click)="filter(1)">
+                    <img class="w-50 rounded-circle" src="https://i.postimg.cc/gkM6r3sP/engineered-wood-wallshelf-in-yellow-colour-engineered-wood-wallshelf-in-yellow-colour-0crtey.webp" alt="">
+                    <h5 class="p-2 m-1 text-success">Wall Shelfs</h5>
+                </a>
+            </div>
+            <div class="col-3 p-2">
+                <a (click)="filter(2)">
+                    <img class="w-50 rounded-circle" src="https://i.postimg.cc/fb8Pr2jr/lotus-pair-hand-carved-block-wall-d-cor-in-sheesham-wood-set-of-2-by-exclusivelane-lotus-pair-hand.webp" alt="">
+                    <h5 class="p-2 m-1 text-success">Home Decor</h5>
+                </a>
+            </div>
+            <div class="col-3 p-2">
+                <a (click)="filter(3)">
+                    <img class="w-50 rounded-circle" src="https://i.postimg.cc/qqNHwfPw/warm-white-2-meter-led-festive-string-light-by-mansaa-warm-white-2-meter-led-festive-string-light-by.webp" alt="">
+                    <h5 class="p-2 m-1 text-success">Lights & Lamps</h5>
+                </a>
+            </div>
+        </div>
+    
+</div> <hr>
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5" *ngFor="let i of filterproducts | filter:searchkey:'productName' ">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="{{i.productImage}} " alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-3">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{i.productName}}</h5>
+                            <!-- Product price-->
+                            <span class="text-muted text-decoration-line-through p-1">₹{{i.mrpPrice}} </span>
+                            ₹{{i.price}} 
+                            <h6>{{i.discount}}</h6>
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product/view-product/{{i.id}}">View options</a></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

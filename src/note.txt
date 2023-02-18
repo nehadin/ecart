@@ -1,0 +1,129 @@
+6-1-2023 - fri
+```````````````
+
+
+Lazy loading
+-----------------
+
+usually the website's will have some pages which will've more traffic than other pages, bcause people will be majorily accessing that page than other pages
+    - those modules will be created using lazy loading technique
+
+{Lazy loading dynamically loads the feature modules when there's a demand. }
+{This makes the application faster. }
+{It is used for bigger applications where all the modules are not required at the start of the application. }
+
+
+1. Creating module
+
+    Creating normal module
+  ----------------------------
+        >>  ng g module moduleName
+
+    Lazy loaded Module creation
+  ---------------------------------
+        >>  ng g module moduleName --route moduleName --module rootmoduleName
+        -- Ex : ng g module product --route product --module app.module
+
+for the lazy loaded module , path will be auto defined in it ts file : (product-routing.module.ts)
+        const routes: Routes = [{ path: '', component: ProductComponent }];
+
+
+
+12-1-2023 - mon
+```````````````````````
+get fake API from jsonplaceholder site , from JSON server >> example >> get db.json from git hub link.
+copy the code and paste it inside Assests folder, create new file 'db.json' and paste the code
+
+install JSON server:
+      >> npm i --save json-server
+
+
+      >> npx json-server --watch db.json --port 3000
+
+
+13-1-2023 - tue 
+````````````````
+
+[[[[[ calling db.json file and displaying all the products in View-all-product component ]]]]]
+
+* To display the data from server in front end.....we need to do API call
+* to get these data from Server, we use GET api call      >>    GET
+* API request is created using HTTPclient module,  
+    - import HttpClientModule in product module.ts
+* Create service inside product module
+
+
+16-01-2023 mon
+``````````````
+
+17-01-2023 tue
+``````````````
+
+while viewing an item, the products unique id is geeting passes through the url as parameter,
+So to get the id form the paramater, we are creating an API in product service ts
+
+Accessing data from path of component/URL 
+-----------------------------------------
+
+ActivatedRoute  -    class    
+params          -    method
+
+this class is requied in 'View-product'component, so this class is injected (dependency injection) in the constructor of View-product component TS file
+
+-   used for getting data from component's path
+
+
+
+18-01-2023 wed
+````````````````
+
+Creating pipe
+---------------
+
+pipe is used for converting data from one format to another.
+to create pipe:
+    1. Create a folder 'pipe' inside 'product' folder
+    2. inside 'pipe' folder in cmd, use the commnd
+            >> ng g pipe filter
+                    it generates a pipe with name 'filter'
+
+    3. It will create 2 files- specification file & a ts file
+        the ts file will have a decator with name -filter
+
+FILTERS
+___________\
+
+Filters are used to format an expression and present it to the user. They can be used in view templates, controllers, or services. 
+Some inbuilt filters are as follows. 
+
+date - Format a date to a specified format.
+filter - Select a subset of items from an array.
+Json - Format an object to a JSON string.
+limitTo -  Limits an array/string, into a specified number of elements/characters.
+lowercase - Format a string to lowercase.
+
+BehaviorSubject in Angular
+---------------------------
+```````````````````````````
+used for sharing data from one module to another module
+- Behaviouralsubject is asynchronous
+
+Comes from   --     rxjs 
+
+Behaviorsubject is created inside Service.
+since all the components need access to this, we declared it inside Service
+        import { BehaviorSubject } from 'rxjs';
+
+as Behavioursubject is a class, we need to declare an object using it.
+
+We are going to use it because, the search box in Header componet will need to display the data from Viw-all-product component
+
+now, inside Header html file, using [(ngModel)] we call the searchterm, and define it in ts file
+and inte site module ts file, we import FormsModule
+
+keyup event
+```````````
+
+Similar to onclick event
+- it accepts a fnction with $event
+

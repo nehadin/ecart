@@ -1,0 +1,22 @@
+h6{
+    background-color: rgba(244, 200, 24, 0.822);
+    color: white;
+    border-radius: 50px;
+    border-color: rgba(238, 122, 118, 0.938);
+    border: 2px;
+    width: 16%;
+    float: right;
+    font-size:smaller;
+   
+}
+a{
+    text-decoration: none;
+}
+.rounded-circle{
+    box-shadow: rgba(161, 102, 0, 0.519) 4px 3px 8px 4px;
+    
+}
+hr{
+    color: goldenrod;
+    box-shadow: 2px 2px 8px 3px;
+}

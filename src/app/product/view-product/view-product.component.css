@@ -1,0 +1,23 @@
+b{
+    color: rgba(16, 216, 123, 0.597);
+    
+}
+.small{
+    color:rgb(255, 0, 119);
+}
+.edit{
+background-color: #ffa500;
+/* color: rgb(9, 7, 7); */
+}
+.delete{
+background-color: rgb(154, 46, 6);
+/* color: rgb(18, 13, 13); */
+}
+a{
+    color: white;
+text-decoration: none;
+}
+a:hover{
+    color: rgb(3, 0, 86);
+    /* background-color: #9a670879; */
+}
